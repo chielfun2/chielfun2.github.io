@@ -9,17 +9,17 @@ const projects = [
     href: "#",
   },
   {
-    title: "Project Two",
+    title: "Poker Game",
     description:
-      "Replace this card with one of your real projects and link to the live demo or GitHub repository.",
-    tech: ["React", "API", "UI"],
-    href: "#",
+      "A working poker game I built to learn C++ from the ground up, then wrapped in a Next.js front-end so it can be played through a UI instead of just the terminal.",
+    tech: ["C++", "Next.js", "React", "TypeScript"],
+    href: "https://github.com/chielfun2/poker-game",
   },
   {
-    title: "Project Three",
+    title: "Coming Soon",
     description:
-      "Use this space to explain the problem, your solution, and what you learned while building it.",
-    tech: ["Frontend", "Design", "Deployment"],
+      "A new project is in the works. Check back later to see what I'm building next.",
+    tech: ["TBD"],
     href: "#",
   },
 ];
@@ -45,7 +45,7 @@ export default function Home() {
           <div>
             <p className={styles.eyebrow}>3rd year Software Engineer Student</p>
             <h1 className={styles.heroTitle}>
-              A clean hub for the <span className={styles.accent}>projects I build.</span>
+              A hub for the <span className={styles.accent}>projects I build.</span>
             </h1>
             <p className={styles.heroText}>
               I am a third year student at HVA, studying Software Engineering. I am passionate about building web applications and continuously improving my skills in front-end and back-end development.

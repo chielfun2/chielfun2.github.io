@@ -109,9 +109,17 @@ export default function Home() {
             Add your email, GitHub, LinkedIn, and CV link here when you are ready to share the hub.
           </p>
           <div className={styles.contactLinks}>
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a className={styles.emailLink} href="mailto:you@example.com">
+            <a href="https://github.com/chielfun2" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chiel-kramer-15b39b257"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a className={styles.emailLink} href="mailto:chielkramer04@gmail.com">
               Email me
             </a>
           </div>

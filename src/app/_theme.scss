@@ -1,0 +1,34 @@
+// Color theme — tweak these to change the whole site.
+// Favourite colors: green + cyan (analogous, so they blend smoothly).
+
+// Base / background
+$bg: #04121a; // deep teal-navy
+$bg-soft: #07202c; // slightly lighter panel base
+$surface: rgba(255, 255, 255, 0.03);
+$surface-strong: rgba(255, 255, 255, 0.06);
+$border: rgba(125, 238, 217, 0.12);
+$border-strong: rgba(125, 238, 217, 0.35);
+
+// Accents
+$cyan: #22d3ee;
+$green: #34d399;
+$cyan-soft: rgba(34, 211, 238, 0.12);
+$green-soft: rgba(52, 211, 153, 0.12);
+
+// Text
+$text: #d7eef0;
+$text-muted: #9fc3c8;
+$heading: #f0fdfa;
+
+// Gradients
+$accent-gradient: linear-gradient(120deg, #{$cyan}, #{$green});
+$glow-gradient: radial-gradient(
+    circle at top left,
+    rgba(34, 211, 238, 0.28),
+    transparent 32rem
+  ),
+  radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.22), transparent 28rem);
+
+// Shadows
+$shadow-soft: 0 24px 80px rgba(2, 12, 16, 0.55);
+$shadow-glow: 0 16px 40px rgba(34, 211, 238, 0.25);

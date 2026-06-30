@@ -1,3 +1,5 @@
+@use "theme" as *;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,8 +19,9 @@ html {
 }
 
 body {
-  background: #020617;
-  color: #e2e8f0;
+  background: $bg;
+  color: $text;
+  font-feature-settings: "ss01";
 }
 
 a {
@@ -27,6 +30,6 @@ a {
 }
 
 ::selection {
-  background: #8b5cf6;
-  color: white;
+  background: $cyan;
+  color: $bg;
 }

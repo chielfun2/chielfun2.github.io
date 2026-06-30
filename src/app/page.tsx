@@ -24,7 +24,7 @@ const projects = [
   },
 ];
 
-const skills = ["Next.js", "React", "TypeScript", "Tailwind CSS", "GitHub", "Responsive UI"];
+const skills = ["Kotlin", "DevOps", "Git", "Next.js", "React", "TypeScript"];
 
 export default function Home() {
   return (
@@ -43,11 +43,12 @@ export default function Home() {
 
         <div className={styles.heroGrid}>
           <div>
-            <p className={styles.eyebrow}>Frontend developer portfolio</p>
-            <h1 className={styles.heroTitle}>A clean hub for the projects I build.</h1>
+            <p className={styles.eyebrow}>3rd year Software Engineer Student</p>
+            <h1 className={styles.heroTitle}>
+              A clean hub for the <span className={styles.accent}>projects I build.</span>
+            </h1>
             <p className={styles.heroText}>
-              Showcase your best work, explain your technical choices, and make it easy for companies
-              to view demos, source code, and contact details.
+              I am a third year student at HVA, studying Software Engineering. I am passionate about building web applications and continuously improving my skills in front-end and back-end development.
             </p>
             <div className={styles.actions}>
               <a href="#projects" className={styles.primaryButton}>
@@ -61,7 +62,7 @@ export default function Home() {
 
           <div className={styles.focusCard}>
             <p className={styles.cardLabel}>Current focus</p>
-            <h2>Building useful, polished web apps.</h2>
+            <h2>Expanding my knowledge in these areas</h2>
             <div className={styles.skillsGrid}>
               {skills.map((skill) => (
                 <span key={skill} className={styles.skillPill}>

@@ -114,11 +114,7 @@ export default function Home() {
             <a href="https://github.com/chielfun2" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a
-              href="https://www.linkedin.com/in/chiel-kramer-15b39b257"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/chiel-kramer-15b39b257" className={styles.linkedinLink}>
               LinkedIn
             </a>
             <a className={styles.emailLink} href="mailto:chielkramer04@gmail.com">

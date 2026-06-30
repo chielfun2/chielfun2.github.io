@@ -3,7 +3,7 @@ const projects = [
     title: "Portfolio Hub",
     description:
       "A Next.js starter for presenting projects, demos, source code, and the skills behind them.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     href: "#",
   },
   {

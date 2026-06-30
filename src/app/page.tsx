@@ -104,9 +104,11 @@ export default function Home() {
 
       <section id="contact" className={styles.contactSection}>
         <div className={styles.contactCard}>
-          <h2>Ready for opportunities.</h2>
+          <h2>Get to know me better.</h2>
           <p>
-            Add your email, GitHub, LinkedIn, and CV link here when you are ready to share the hub.
+            This is a space to learn more about me, the work I enjoy building, and the projects I
+            am growing through. You can explore my GitHub, connect with me on LinkedIn, or send me
+            an email.
           </p>
           <div className={styles.contactLinks}>
             <a href="https://github.com/chielfun2" target="_blank" rel="noopener noreferrer">

@@ -369,8 +369,12 @@
 }
 
 .contactLinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid $border-strong;
   border-radius: 999px;
+  min-height: 44px;
   padding: 0.8rem 1.4rem;
   color: $text;
 
@@ -379,6 +383,13 @@
     color: $cyan;
     transform: translateY(-2px);
   }
+}
+
+.contactLinks .linkedinLink {
+  position: relative;
+  z-index: 1;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .contactLinks .emailLink {

@@ -1,6 +1,6 @@
 # Chielfun2 Project Hub
 
-A Next.js + TypeScript + Tailwind CSS starter for a personal project hub/portfolio.
+A Next.js + React + TypeScript + Tailwind CSS starter for a personal project hub/portfolio.
 
 ## Getting started
 

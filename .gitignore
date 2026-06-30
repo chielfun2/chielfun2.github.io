@@ -3,6 +3,7 @@
 .idea/
 .next/
 node_modules/
+out/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

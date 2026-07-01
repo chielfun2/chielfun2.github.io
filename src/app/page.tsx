@@ -6,7 +6,7 @@ const projects = [
     description:
       "A Next.js starter for presenting projects, demos, source code, and the skills behind them.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    href: "#",
+    href: "https://github.com/chielfun2/chielfun2.github.io",
   },
   {
     title: "Poker Game",

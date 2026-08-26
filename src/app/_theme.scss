@@ -1,34 +1,22 @@
-// Color theme — tweak these to change the whole site.
-// Favourite colors: green + cyan (analogous, so they blend smoothly).
+$bg: #0b1117;
+$bg-soft: #121c25;
+$surface: rgba(15, 23, 30, 0.78);
+$surface-strong: rgba(17, 24, 39, 0.9);
+$border: rgba(148, 163, 184, 0.16);
+$border-strong: rgba(103, 232, 249, 0.42);
 
-// Base / background
-$bg: #04121a; // deep teal-navy
-$bg-soft: #07202c; // slightly lighter panel base
-$surface: rgba(255, 255, 255, 0.03);
-$surface-strong: rgba(255, 255, 255, 0.06);
-$border: rgba(125, 238, 217, 0.12);
-$border-strong: rgba(125, 238, 217, 0.35);
+$cyan: #67e8f9;
+$green: #9ae6b4;
+$cyan-soft: rgba(103, 232, 249, 0.1);
+$green-soft: rgba(154, 230, 180, 0.08);
 
-// Accents
-$cyan: #22d3ee;
-$green: #34d399;
-$cyan-soft: rgba(34, 211, 238, 0.12);
-$green-soft: rgba(52, 211, 153, 0.12);
+$text: #edf4f8;
+$text-muted: #a1afba;
+$heading: #f7fbfd;
 
-// Text
-$text: #d7eef0;
-$text-muted: #9fc3c8;
-$heading: #f0fdfa;
+$accent-gradient: linear-gradient(135deg, #67e8f9 0%, #7dd3fc 45%, #c4b5fd 100%);
+$glow-gradient: radial-gradient(circle at top left, rgba(103, 232, 249, 0.12), transparent 28rem),
+  radial-gradient(circle at 80% 15%, rgba(125, 211, 252, 0.08), transparent 24rem);
 
-// Gradients
-$accent-gradient: linear-gradient(120deg, #{$cyan}, #{$green});
-$glow-gradient: radial-gradient(
-    circle at top left,
-    rgba(34, 211, 238, 0.28),
-    transparent 32rem
-  ),
-  radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.22), transparent 28rem);
-
-// Shadows
-$shadow-soft: 0 24px 80px rgba(2, 12, 16, 0.55);
-$shadow-glow: 0 16px 40px rgba(34, 211, 238, 0.25);
+$shadow-soft: 0 24px 80px rgba(2, 12, 16, 0.58);
+$shadow-glow: 0 18px 42px rgba(103, 232, 249, 0.17);

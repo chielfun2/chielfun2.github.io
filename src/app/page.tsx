@@ -1,4 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
+
+type Theme = "dark" | "light";
 
 const projects = [
   {
@@ -25,31 +30,84 @@ const projects = [
 ];
 
 const skills = ["Kotlin", "DevOps", "Git", "Next.js", "React", "TypeScript"];
+const navLinks = [
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+const themeOptions: { label: Theme; value: Theme }[] = [
+  { label: "light", value: "light" },
+  { label: "dark", value: "dark" },
+];
 
 export default function Home() {
+  const [theme, setTheme] = useState<Theme>("dark");
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const nextTheme: Theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : prefersLight ? "light" : "dark";
+
+    setTheme(nextTheme);
+    document.body.dataset.theme = nextTheme;
+  }, []);
+
+  useEffect(() => {
+    document.body.dataset.theme = theme;
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
         <div className={styles.heroBackground} />
+
         <nav className={styles.nav}>
           <a className={styles.logo} href="#">
             Chielfun2
           </a>
-          <div className={styles.navLinks}>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+
+          <div className={styles.navActions}>
+            <div className={styles.navLinks}>
+              {navLinks.map(({ label, href }) => (
+                <a key={label} href={href}>
+                  {label}
+                </a>
+              ))}
+            </div>
+
+            <div className={styles.themeToggleGroup} aria-label="Theme switcher">
+              {themeOptions.map(({ label, value }) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={`${styles.themeButton} ${theme === value ? styles.themeButtonActive : ""}`}
+                  onClick={() => setTheme(value)}
+                  aria-pressed={theme === value}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </nav>
 
         <div className={styles.heroGrid}>
           <div>
-            <p className={styles.eyebrow}>3rd year Software Engineer Student</p>
+            <p className={styles.eyebrow}>HVA Amsterdam • Software Engineering</p>
             <h1 className={styles.heroTitle}>
-              A hub for the <span className={styles.accent}>projects I build.</span>
+              Building software with <span className={styles.accent}>clarity, structure, and impact.</span>
             </h1>
             <p className={styles.heroText}>
-              I am a third year student at HVA, studying Software Engineering. I am passionate about building web applications and continuously improving my skills in front-end and back-end development.
+              I’m a third-year software engineering student at the HVA in Amsterdam, focused on
+              building clean interfaces, reliable systems, and products that are easy to trust.
             </p>
+
+            <div className={styles.metaRow}>
+              <span>3rd year</span>
+              <span>Product-minded</span>
+              <span>Open to opportunities</span>
+            </div>
+
             <div className={styles.actions}>
               <a href="#projects" className={styles.primaryButton}>
                 View projects
@@ -62,7 +120,7 @@ export default function Home() {
 
           <div className={styles.focusCard}>
             <p className={styles.cardLabel}>Current focus</p>
-            <h2>Expanding my knowledge in these areas</h2>
+            <h2>Expanding my knowledge in product engineering and systems thinking.</h2>
             <div className={styles.skillsGrid}>
               {skills.map((skill) => (
                 <span key={skill} className={styles.skillPill}>
@@ -80,8 +138,8 @@ export default function Home() {
             <p className={styles.sectionLabel}>Selected work</p>
             <h2>Projects</h2>
             <p>
-              Start with three strong projects. For each one, show what it does, what you used, and
-              why it matters.
+              A small selection of work that reflects how I think about building products:
+              practical, user-focused, and grounded in maintainable engineering.
             </p>
           </div>
 
@@ -104,11 +162,11 @@ export default function Home() {
 
       <section id="contact" className={styles.contactSection}>
         <div className={styles.contactCard}>
-          <h2>Get to know me better.</h2>
+          <h2>Let’s build something meaningful.</h2>
           <p>
-            This is a space to learn more about me, the work I enjoy building, and the projects I
-            am growing through. You can explore my GitHub, connect with me on LinkedIn, or send me
-            an email.
+            I’m looking to keep growing through real-world projects, collaborative teams, and
+            opportunities where I can contribute with both technical thinking and a strong product
+            mindset.
           </p>
           <div className={styles.contactLinks}>
             <a href="https://github.com/chielfun2" target="_blank" rel="noopener noreferrer">
@@ -126,3 +184,4 @@ export default function Home() {
     </main>
   );
 }
+

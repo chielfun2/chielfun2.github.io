@@ -1,11 +1,59 @@
-@use "theme" as *;
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
+  --bg: #0b1117;
+  --bg-soft: #121c25;
+  --surface: rgba(15, 23, 30, 0.78);
+  --surface-strong: rgba(17, 24, 39, 0.9);
+  --border: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(103, 232, 249, 0.42);
+  --cyan: #67e8f9;
+  --green: #9ae6b4;
+  --cyan-soft: rgba(103, 232, 249, 0.1);
+  --green-soft: rgba(154, 230, 180, 0.08);
+  --text: #edf4f8;
+  --text-muted: #a1afba;
+  --heading: #f7fbfd;
+  --button-text: #061a24;
+  --card-bg: linear-gradient(180deg, rgba(18, 28, 37, 0.96), rgba(12, 18, 24, 0.92));
+  --project-card-bg: linear-gradient(180deg, rgba(17, 24, 39, 0.84), rgba(11, 17, 23, 0.96));
+  --contact-card-bg: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(12, 18, 24, 0.92));
+  --pill-bg: rgba(15, 23, 30, 0.85);
+  --accent-gradient: linear-gradient(135deg, #67e8f9 0%, #7dd3fc 45%, #c4b5fd 100%);
+  --glow-gradient: radial-gradient(circle at top left, rgba(103, 232, 249, 0.12), transparent 28rem),
+    radial-gradient(circle at 80% 15%, rgba(125, 211, 252, 0.08), transparent 24rem);
+  --shadow-soft: 0 24px 80px rgba(2, 12, 16, 0.58);
+  --shadow-glow: 0 18px 42px rgba(103, 232, 249, 0.17);
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f2f7fb;
+  --bg-soft: #f8fafc;
+  --surface: rgba(255, 255, 255, 0.8);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(8, 145, 178, 0.22);
+  --cyan: #0f9ec6;
+  --green: #2a8d72;
+  --cyan-soft: rgba(15, 158, 198, 0.08);
+  --green-soft: rgba(42, 141, 114, 0.08);
+  --text: #111827;
+  --text-muted: #4b5563;
+  --heading: #0f172a;
+  --button-text: #052a3a;
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.96));
+  --project-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.96));
+  --contact-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.95));
+  --pill-bg: rgba(248, 250, 252, 0.96);
+  --accent-gradient: linear-gradient(135deg, #67e8f9 0%, #7dd3fc 48%, #c4b5fd 100%);
+  --glow-gradient: radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 30rem),
+    radial-gradient(circle at 80% 15%, rgba(147, 197, 253, 0.12), transparent 26rem);
+  --shadow-soft: 0 28px 64px rgba(15, 23, 42, 0.1);
+  --shadow-glow: 0 18px 28px rgba(8, 145, 178, 0.1);
 }
 
 * {
@@ -19,8 +67,8 @@ html {
 }
 
 body {
-  background: $bg;
-  color: $text;
+  background: var(--bg);
+  color: var(--text);
   font-feature-settings: "ss01";
 }
 
@@ -30,6 +78,6 @@ a {
 }
 
 ::selection {
-  background: $cyan;
-  color: $bg;
+  background: var(--cyan);
+  color: var(--bg);
 }

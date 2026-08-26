@@ -1,25 +1,24 @@
-@use "theme" as *;
-
 .page {
   min-height: 100vh;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% -10%, rgba(34, 211, 238, 0.08), transparent 40rem),
-    $bg;
-  color: $text;
+    radial-gradient(circle at 50% -20%, rgba(103, 232, 249, 0.08), transparent 30rem),
+    linear-gradient(180deg, var(--bg) 0%, rgba(148, 163, 184, 0.12) 100%);
+  color: var(--text);
 }
 
 .hero {
   position: relative;
   isolation: isolate;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.5rem 0;
 }
 
 .heroBackground {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: $glow-gradient;
+  background: var(--glow-gradient);
+  opacity: 0.9;
 }
 
 .nav,
@@ -34,13 +33,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.25rem 0 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: -0.025em;
-  background: $accent-gradient;
+  letter-spacing: -0.04em;
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -48,9 +55,13 @@
 
 .navLinks {
   display: flex;
+  align-items: center;
   gap: 1.5rem;
-  color: $text-muted;
-  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .navLinks a,
@@ -58,38 +69,70 @@
 .primaryButton,
 .projectCard,
 .contactLinks a,
-.skillPill {
+.skillPill,
+.themeButton {
   transition:
-    color 200ms ease,
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease,
-    transform 200ms ease;
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .navLinks a:hover {
-  color: $cyan;
+  color: var(--cyan);
+}
+
+.themeToggleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  padding: 0.25rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+}
+
+.themeButton {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.45rem 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.themeButtonActive {
+  background: var(--accent-gradient);
+  color: var(--button-text);
+  box-shadow: var(--shadow-glow);
 }
 
 .heroGrid {
   display: grid;
-  gap: 3rem;
-  padding: 6rem 0;
+  gap: 2.75rem;
+  align-items: center;
+  padding: 5rem 0 4.5rem;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
   margin-bottom: 1.25rem;
-  border: 1px solid $border-strong;
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
-  background: $cyan-soft;
-  padding: 0.5rem 1rem;
-  color: $cyan;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  background: var(--cyan-soft);
+  padding: 0.55rem 0.9rem;
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -98,20 +141,20 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 999px;
-  background: $green;
-  box-shadow: 0 0 0.5rem $green;
+  background: var(--green);
+  box-shadow: 0 0 0.65rem rgba(42, 141, 114, 0.5);
 }
 
 .heroTitle {
   max-width: 48rem;
-  font-size: clamp(3rem, 8vw, 4.75rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 1.02;
-  color: $heading;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+  color: var(--heading);
 
   .accent {
-    background: $accent-gradient;
+    background: var(--accent-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -120,79 +163,100 @@
 
 .heroText {
   max-width: 42rem;
+  margin-top: 1.4rem;
+  color: var(--text-muted);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 1.5rem;
-  color: $text-muted;
-  font-size: 1.15rem;
-  line-height: 1.75;
+
+  span {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    padding: 0.45rem 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 2.25rem;
+  margin-top: 2rem;
 }
 
 .primaryButton,
 .secondaryButton {
   border-radius: 999px;
-  padding: 0.8rem 1.6rem;
-  font-size: 0.9rem;
+  padding: 0.82rem 1.45rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
 .primaryButton {
-  background: $accent-gradient;
-  color: $bg;
-  box-shadow: $shadow-glow;
+  background: var(--accent-gradient);
+  color: var(--button-text);
+  box-shadow: var(--shadow-glow);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 20px 50px rgba(52, 211, 153, 0.35);
+    box-shadow: 0 18px 36px rgba(8, 145, 178, 0.15);
   }
 }
 
 .secondaryButton {
-  border: 1px solid $border-strong;
-  color: $text;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
 
   &:hover {
-    border-color: $cyan;
-    color: $cyan;
+    border-color: var(--cyan);
+    color: var(--cyan);
   }
 }
 
 .focusCard,
 .projectCard,
 .contactCard {
-  border: 1px solid $border;
-  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1.4rem;
 }
 
 .focusCard {
-  background: $surface-strong;
+  background: var(--card-bg);
   padding: 1.75rem;
-  box-shadow: $shadow-soft;
-  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
 }
 
 .cardLabel,
 .sectionLabel {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .cardLabel {
-  color: $cyan;
+  color: var(--cyan);
 }
 
 .focusCard h2 {
   margin-top: 1rem;
-  color: $heading;
-  font-size: 1.875rem;
-  font-weight: 800;
+  color: var(--heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .skillsGrid {
@@ -203,17 +267,18 @@
 }
 
 .skillPill {
-  border: 1px solid $border;
+  border: 1px solid var(--border);
   border-radius: 0.9rem;
-  background: $bg-soft;
+  background: var(--pill-bg);
   padding: 0.75rem 1rem;
-  color: $text;
-  font-size: 0.9rem;
+  color: var(--text);
+  font-size: 0.88rem;
   font-weight: 500;
 
   &:hover {
-    border-color: $green;
-    color: $green;
+    border-color: rgba(15, 158, 198, 0.35);
+    color: var(--cyan);
+    transform: translateY(-1px);
   }
 }
 
@@ -226,29 +291,29 @@
 }
 
 .sectionLabel {
-  color: $green;
+  color: var(--green);
 }
 
 .sectionIntro h2,
 .contactCard h2 {
-  color: $heading;
-  font-weight: 900;
+  color: var(--heading);
+  font-weight: 800;
 }
 
 .sectionIntro h2 {
   margin-top: 0.75rem;
-  font-size: 2.5rem;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
 }
 
 .sectionIntro p,
 .contactCard p {
-  color: $text-muted;
+  color: var(--text-muted);
 }
 
 .sectionIntro p {
   margin-top: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .projectGrid {
@@ -259,49 +324,30 @@
 
 .projectCard {
   position: relative;
-  background: $surface;
+  background: var(--project-card-bg);
+  border-color: var(--border);
   padding: 1.75rem;
   overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: $accent-gradient;
-    opacity: 0;
-    transition: opacity 200ms ease;
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
   &:hover {
-    transform: translateY(-0.35rem);
-    background: $surface-strong;
-    box-shadow: $shadow-soft;
-
-    &::before {
-      opacity: 1;
-    }
+    transform: translateY(-0.3rem);
+    border-color: rgba(15, 158, 198, 0.25);
+    box-shadow: var(--shadow-soft);
   }
 }
 
 .projectCard h3 {
-  color: $heading;
-  font-size: 1.3rem;
-  font-weight: 800;
+  color: var(--heading);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .projectCard p {
   min-height: 6rem;
   margin-top: 0.75rem;
-  color: $text-muted;
-  font-size: 0.9rem;
-  line-height: 1.6rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
 }
 
 .techList {
@@ -313,25 +359,25 @@
 
 .techList span {
   border-radius: 999px;
-  border: 1px solid $border;
-  background: $green-soft;
-  padding: 0.25rem 0.75rem;
-  color: $green;
-  font-size: 0.75rem;
-  font-weight: 500;
+  border: 1px solid rgba(15, 158, 198, 0.18);
+  background: var(--cyan-soft);
+  padding: 0.3rem 0.7rem;
+  color: var(--cyan);
+  font-size: 0.74rem;
+  font-weight: 600;
 }
 
 .cardLink {
   display: inline-block;
   margin-top: 1.5rem;
-  color: $cyan;
-  font-size: 0.9rem;
+  color: var(--cyan);
+  font-size: 0.88rem;
   font-weight: 700;
   transition: transform 200ms ease;
 }
 
 .projectCard:hover .cardLink {
-  transform: translateX(0.25rem);
+  transform: translateX(0.18rem);
 }
 
 .contactSection {
@@ -341,21 +387,21 @@
 .contactCard {
   position: relative;
   background:
-    radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.1), transparent 24rem),
-    $surface-strong;
+    radial-gradient(circle at 50% 0%, rgba(103, 232, 249, 0.08), transparent 22rem),
+    var(--contact-card-bg);
   padding: 3rem 2rem;
   text-align: center;
   overflow: hidden;
 }
 
 .contactCard h2 {
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
 }
 
 .contactCard p {
   max-width: 42rem;
   margin: 1rem auto 0;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .contactLinks {
@@ -372,15 +418,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $border-strong;
+  border: 1px solid var(--border);
   border-radius: 999px;
   min-height: 44px;
   padding: 0.8rem 1.4rem;
-  color: $text;
+  color: var(--text);
+  background: var(--surface);
 
   &:hover {
-    border-color: $cyan;
-    color: $cyan;
+    border-color: var(--cyan);
+    color: var(--cyan);
     transform: translateY(-2px);
   }
 }
@@ -394,13 +441,13 @@
 
 .contactLinks .emailLink {
   border-color: transparent;
-  background: $accent-gradient;
-  color: $bg;
-  box-shadow: $shadow-glow;
+  background: var(--accent-gradient);
+  color: var(--button-text);
+  box-shadow: var(--shadow-glow);
 
   &:hover {
-    color: $bg;
-    box-shadow: 0 20px 50px rgba(52, 211, 153, 0.35);
+    color: var(--button-text);
+    box-shadow: 0 18px 36px rgba(8, 145, 178, 0.14);
   }
 }
 
@@ -418,6 +465,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
 
 @media (min-width: 1024px) {
   .hero,

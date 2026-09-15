@@ -76,17 +76,26 @@ export default function Home() {
             </div>
 
             <div className={styles.themeToggleGroup} aria-label="Theme switcher">
-              {themeOptions.map(({ label, value }) => (
-                <button
-                  key={value}
-                  type="button"
-                  className={`${styles.themeButton} ${theme === value ? styles.themeButtonActive : ""}`}
-                  onClick={() => setTheme(value)}
-                  aria-pressed={theme === value}
-                >
-                  {label}
-                </button>
-              ))}
+              <button
+                type="button"
+                className={`${styles.themeButton} ${theme === "light" ? styles.themeButtonActive : ""}`}
+                onClick={() => setTheme("light")}
+                aria-pressed={theme === "light"}
+                title="Light mode"
+              >
+                <span className={styles.themeEmoji}>☀️</span>
+                <span className={styles.themeText}>Light</span>
+              </button>
+              <button
+                type="button"
+                className={`${styles.themeButton} ${theme === "dark" ? styles.themeButtonActive : ""}`}
+                onClick={() => setTheme("dark")}
+                aria-pressed={theme === "dark"}
+                title="Dark mode"
+              >
+                <span className={styles.themeEmoji}>🌙</span>
+                <span className={styles.themeText}>Dark</span>
+              </button>
             </div>
           </div>
         </nav>
